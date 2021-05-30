@@ -1,0 +1,130 @@
+.message {
+  &__content {
+    display: flex;
+    max-width: 440px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  &__icon-readed {
+    position: absolute;
+    bottom: 35px;
+    left: -25px;
+    &--no {
+      left: -22px;
+    }
+  }
+  &__avatar {
+    display: flex;
+    flex-direction: column-reverse;
+    img {
+      border-radius: 50px;
+      width: 33px;
+      height: 33px;
+      margin-right: 13px;
+      margin-bottom: 10px;
+    }
+  }
+  &__bubble {
+    background: #3674FF;
+    box-shadow: 0 5px 5px rgba(54, 116, 255, 0.196733);
+    border-radius: 12px 12px 12px 0;
+    padding: 15px;
+    margin-bottom: 8px;
+  }
+  &__text {
+    color: #fff;
+    margin-bottom: 0;
+    line-height: 20px;
+  }
+  &__date {
+    font-size: 12px;
+    opacity: 0.4;
+  }
+  &__attachments {
+    display: flex;
+    &-item {
+      margin-right: 6px;
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+  &--isme {
+    display: flex;
+    flex-direction: row-reverse;
+    .message__content {
+      margin-bottom: 15px;
+      flex-direction: row-reverse;
+    }
+    .message__avatar {
+      img {
+        margin-right: 0;
+        margin-left: 13px;
+        margin-bottom: 10px;
+      }
+    }
+    .message__info {
+      text-align: right;
+    }
+    .message__bubble {
+      background-color: #fff;
+      border: 1px solid #ececec;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.0220444);
+      border-radius: 12px 12px 0 12px;
+    }
+    .message__text {
+      color: #202020;
+    }
+  }
+  &--image {
+    .message__attachments {
+      &-item {
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+  }
+  &--is-typing {
+    .message__bubble {
+      background-color: #E5EDFF;
+      box-shadow: 0 5px 5px rgba(54, 116, 255, 0.04);
+      padding: 15px 20px;
+    }
+    span {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background: #A6BDF0;
+      display: inline-block;
+      margin-right: 8px;
+      animation: 0.8s typingAnimation infinite ease-out 0.1s;
+      &:nth-of-type(2) {
+        animation: 0.8s typingAnimation infinite ease-out 0.2s;
+      }
+      &:nth-of-type(3) {
+        animation: 0.8s typingAnimation infinite ease-out 0.3s;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@keyframes typingAnimation {
+  from {
+    opacity: 0.2;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+}

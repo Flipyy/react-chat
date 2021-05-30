@@ -1,0 +1,80 @@
+.dialogs {
+  width: 320px;
+  &__item {
+    padding: 0 20px;
+    display: flex;
+    &-avatar {
+      position: relative;
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    &--online {
+      .dialogs__item-avatar {
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: #00C980;
+          border-radius: 30px;
+          width: 12px;
+          height: 12px;
+          border: 3px solid #ffffff;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+    &-info{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      &-top {
+        display: flex;
+        b {
+          font-weight: 500;
+          font-size: 14px;
+          flex: 1;
+        }
+        span {
+          opacity: 0.4;
+        }
+      }
+      &-bottom{
+        position: relative;
+        p {
+          width: 205px;
+          opacity: 0.4;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &-count {
+          position: absolute;
+          right: 1px;
+          bottom: 18px;
+          background-color: #f46b6b;
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 11px;
+          line-height: 18px;
+          text-align: center;
+          width: 18px;
+          height: 18px;
+          border-radius: 30px;
+        }
+        .message__icon-readed{
+          bottom: 20px;
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+}
