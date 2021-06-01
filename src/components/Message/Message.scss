@@ -52,6 +52,57 @@
       }
     }
   }
+
+  &--is-audio {
+    audio {
+      display: none;
+    }
+    .message__bubble {
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .message__audio {
+      &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+      &-btn {
+        button {
+          display: flex;
+          align-items: center;
+          border: none;
+          width: 28px;
+          height: 28px;
+          border-radius: 30px;
+          background-color: #0f3997;
+          cursor: pointer;
+          img {
+            height: 11px;
+            margin: 0 auto;
+          }
+        }
+      }
+      &-duration {
+        color: #fff;
+        font-weight: 500;
+        font-size: 12px;
+        opacity: 0.4;
+      }
+      &-progress {
+        position: absolute;
+        background-color: #418fff;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: width .5s ease;
+      }
+    }
+  }
+
+
   &--isme {
     display: flex;
     flex-direction: row-reverse;
