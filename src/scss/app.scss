@@ -10,5 +10,20 @@
   height: 100%;
 }
 
+.ant-btn-circle {
+  border: 0;
+  box-shadow: none;
+  color: #202020 !important;
+  transition: all .4s;
+  opacity: 0.5;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+  &::after {
+    display: none;
+  }
+}
+
 
 @import 'media';

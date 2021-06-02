@@ -101,8 +101,8 @@ const Message = ({avatar, user, text, date, isMe, isReaded, attachments, audio, 
                         </div>
                     )}
                     {attachments && <div className="message__attachments">
-                        {attachments && attachments.map(item => (
-                            <div className="message__attachments-item">
+                        {attachments && attachments.map((item, index) => (
+                            <div key={index} className="message__attachments-item">
                                 <img src={item.url} alt={item.filename}/>
                             </div>
                         ))}

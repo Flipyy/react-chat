@@ -7,7 +7,7 @@ const getCorrectIndex = number => {
 export default hash => {
     const [r, g, b] = hash.substr(0, 3).split("").map(char => getCorrectIndex(char.charCodeAt(0)));
     return {
-        color: tinycolor({r, g, b}).toHexString(35),
-        colorLighten: tinycolor({r, g, b}).lighten().toHexString()
+        color: tinycolor({r, g, b}).lighten(15).saturate(10).toHexString(),
+        colorLighten: tinycolor({r, g, b}).lighten(40).saturate(30).toHexString()
     }
 }

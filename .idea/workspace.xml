@@ -20,22 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246f80ce-640d-47c7-a9f0-3ddffa7882ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Avatar/Avatar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Avatar/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/convertCurrentTime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/generateAvatarFromHash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ChatInput/ChatInput.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ChatInput/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messages/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Status/Status.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Status/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/_chat.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogitem/Dialogitem.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogitem/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogitem/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Message/Message.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/Message.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Message/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_all.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_all.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/helpers/generateAvatarFromHash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/generateAvatarFromHash.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +96,8 @@
       <workItem from="1622276299633" duration="12343000" />
       <workItem from="1622357233580" duration="19756000" />
       <workItem from="1622457053278" duration="1196000" />
-      <workItem from="1622539545744" duration="16141000" />
+      <workItem from="1622539545744" duration="17171000" />
+      <workItem from="1622621928475" duration="23052000" />
     </task>
     <servers />
   </component>
@@ -116,10 +121,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="726" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622554008045" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622554284399">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622654918641">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622554284399" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622654918641" />
     <state x="628" y="298" key="EditFileWatcherDialog" timestamp="1622017616093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
