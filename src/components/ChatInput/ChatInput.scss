@@ -1,6 +1,11 @@
 .chat-input {
   display: flex;
   margin: 20px;
+  &__emoji-picker {
+    position: absolute;
+    bottom: 70px;
+    z-index: 1;
+  }
   &__smile-btn {
     margin-right: 15px;
     display: flex;
@@ -15,6 +20,14 @@
     width: 80px;
     justify-content: space-between;
     margin-left: 15px;
+    &-upload-btn {
+      cursor: pointer;
+      &:hover {
+        button {
+          opacity: 1;
+        }
+      }
+    }
   }
   .anticon {
     font-size: 20px;

@@ -2,15 +2,20 @@ export default  ({isAuth, values, errors}) => {
     const rules = {
         email: (value) => {
             if (!value) {
-                errors.email = "Ведите E-Mail"
+                errors.email = "Введите E-Mail"
             } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
                 ) {
                 errors.email = "Неверный E-Mail"
             }
         },
+        fullname: (value) => {
+            if (!value) {
+                errors.fullname = "Введите имя"
+            }
+        },
         password: (value) => {
             if (!value) {
-                errors.password = "Ведите пароль"
+                errors.password = "Введите пароль"
             } else if (
                 !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(value)
             ) {

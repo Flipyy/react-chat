@@ -20,26 +20,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246f80ce-640d-47c7-a9f0-3ddffa7882ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ChatInput/ChatInput.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ChatInput/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Messages/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Status/Status.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Status/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/components/_chat.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messages/messages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions/dialogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions/messages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/dialogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/messages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/api/dialogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/api/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/api/messages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogitem/Dialogitem.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Avatar/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatInput/ChatInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatInput/ChatInput.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatInput/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatInput/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogitem/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogitem/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IconReaded/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IconReaded/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Message/Message.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/Message.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Message/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/RegisterForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/_all.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_all.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/generateAvatarFromHash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/generateAvatarFromHash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/_libs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_libs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_chat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_chat.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,15 +80,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils/helpers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-chat-backend" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\react-s\projects\06-project\react-chat\src\utils\helpers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\react-s\projects\06-project\react-chat\src\utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\react-s\projects\06-project\react-chat\src\utils\helpers" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -97,7 +110,9 @@
       <workItem from="1622357233580" duration="19756000" />
       <workItem from="1622457053278" duration="1196000" />
       <workItem from="1622539545744" duration="17171000" />
-      <workItem from="1622621928475" duration="23052000" />
+      <workItem from="1622621928475" duration="23476000" />
+      <workItem from="1622705133308" duration="20276000" />
+      <workItem from="1622792235572" duration="15006000" />
     </task>
     <servers />
   </component>
@@ -117,10 +132,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="726" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622554008045">
+    <state x="726" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622726208648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="726" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622554008045" />
+    <state x="726" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622726208648" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622654918641">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -129,10 +144,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="628" y="298" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622017616093" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1621929414501">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1622714342468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621929414501" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622714342468" />
     <state x="640" y="329" key="run.anything.popup" timestamp="1622358229538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

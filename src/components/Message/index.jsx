@@ -6,7 +6,7 @@ import {convertCurrentTime} from "../../utils/helpers"
 import waveSvg from "../../assets/img/wave.svg"
 import playSvg from "../../assets/img/play.svg"
 import pauseSvg from "../../assets/img/pause.svg"
-import {Time, IconReaded} from "../"
+import {Time, IconReaded, Avatar} from "../"
 
 
 const MessageAudio = ({audio}) => {
@@ -70,7 +70,7 @@ const MessageAudio = ({audio}) => {
 
 }
 
-const Message = ({avatar, user, text, date, isMe, isReaded, attachments, audio, isTyping}) => {
+const Message = ({_id, user, text, date, isMe, isReaded, attachments, audio, isTyping}) => {
 
     return (
         <div className={classNames('message', {
@@ -80,9 +80,9 @@ const Message = ({avatar, user, text, date, isMe, isReaded, attachments, audio, 
             "message--image": attachments && attachments.length === 1
         })}>
             <div className="message__content">
-                <IconReaded isMe={isMe} isReaded={isReaded}/>
+                {isMe && <IconReaded isReaded={isReaded}/>}
                 <div className="message__avatar">
-                    <img src={avatar} alt={`Avatar ${user}`}/>
+                    <Avatar user={user}/>
                 </div>
                 <div className="message__info">
                     {(text || isTyping || audio) && (

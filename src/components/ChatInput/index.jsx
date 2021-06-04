@@ -1,22 +1,43 @@
 import React from 'react';
 import {SmileOutlined, CameraOutlined, AudioOutlined, RocketOutlined} from "@ant-design/icons/lib/icons";
 import {Button, Input} from "antd";
+import { UploadField } from '@navjobs/upload'
+import {Picker} from "emoji-mart"
 
 import "./ChatInput.scss"
 
 const ChatInput = () => {
-
     const [value, setValue] = React.useState("")
+    const [emojiPickerVisible, setShowEmojiPicker] = React.useState(false)
+
+    const toggleEmojiPicker = () => {
+        setShowEmojiPicker(!emojiPickerVisible)
+    }
 
     return (
         <div className="chat-input">
             <div className="chat-input__smile-btn">
-                <Button shape="circle" icon={<SmileOutlined />} />
+                {emojiPickerVisible && <div className="chat-input__emoji-picker">
+                    <Picker set='apple' />
+                </div>}
+                <Button shape="circle" icon={<SmileOutlined />} onClick={toggleEmojiPicker} />
             </div>
             <Input onChange={e => setValue(e.target.value)} size="large" placeholder="Введите текст сообщения..."/>
             <div className="chat-input__actions">
-                <Button shape="circle" icon={<CameraOutlined />} />
-                {value ? <Button shape="circle" icon={<AudioOutlined />} /> : <Button shape="circle" icon={<AudioOutlined />} />}
+
+                <UploadField
+                    onFiles={files => console.log(files)}
+                    containerProps={{
+                        className: "chat-input__actions-upload-btn"
+                    }}
+                    uploadProps={{
+                        accept: ".jpg,.jpeg,.png,.gif,.bmp",
+                        multiple: "multiple"
+                    }}
+                >
+                    <Button shape="circle" icon={<CameraOutlined />} />
+                </UploadField>
+                {value ? <Button shape="circle" icon={<RocketOutlined />} /> : <Button shape="circle" icon={<AudioOutlined />} />}
             </div>
         </div>
     );

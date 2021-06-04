@@ -3,10 +3,10 @@ import React from 'react';
 import "./Avatar.scss"
 import {generateAvatarFromHash} from "../../utils/helpers";
 
-const Avatar = user => {
+const Avatar = ({user}) => {
     if (user.avatar) {
         return (
-            <img src={user.avatar} alt={`Avatar ${user.fullname}`}/>
+            <img className="avatar" src={user.avatar} alt={`Avatar ${user.fullname}`}/>
         )
     } else {
         const {color, colorLighten} = generateAvatarFromHash(user._id)

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
+    "@navjobs/upload": "^3.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -11,7 +12,9 @@
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "date-fns": "^2.22.0",
+    "emoji-mart": "^3.0.1",
     "formik": "^2.2.8",
+    "json-server": "^0.16.3",
     "lodash": "^4.17.21",
     "node-sass": "5.0.0",
     "normalize.css": "^8.0.1",
@@ -30,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "fake-json": "json-server ./public/db.json --watch  --port 3001"
   },
   "eslintConfig": {
     "extends": [

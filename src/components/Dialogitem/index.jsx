@@ -7,10 +7,7 @@ import format from "date-fns/format";
 import isToday from "date-fns/isToday"
 
 
-
-
 const getMessageTime = created_at => {
-    console.log(created_at)
     if (isToday(created_at)) {
         return format(created_at, "HH:mm" )
     } else {
@@ -18,11 +15,13 @@ const getMessageTime = created_at => {
     }
 }
 
-const DialogItem = ({user, message, unread, created_at, text, isMe}) => {
+const DialogItem = ({_id, user, unread, created_at, text, isMe, onSelect, currentDialog}) => {
     return (
-        <div className={classNames("dialogs__item", {"dialogs__item--online": user.isOnline})}>
+        <div className={classNames("dialogs__item", {"dialogs__item--online": user.isOnline}, {"dialogs__item--selected": currentDialog === _id})}
+             onClick={onSelect.bind(this, _id)}
+        >
             <div className="dialogs__item-avatar">
-                {Avatar(user)}
+                <Avatar user={user}/>
             </div>
             <div className="dialogs__item-info">
                 <div className="dialogs__item-info-top">

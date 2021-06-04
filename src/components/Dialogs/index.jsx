@@ -1,13 +1,12 @@
 import React from 'react';
 import _ from "lodash"
+import {Input, Empty, } from "antd";
 
 import {DialogItem} from "../index";
 import "./Dialogs.scss"
-import {Input, Empty} from "antd";
 
 
-
-const Dialogs = ({items, userId}) => {
+const Dialogs = ({items, userId, onSelectDialog, currentDialog}) => {
     const [inputValue, setValue] = React.useState("")
     const [filtered, setFilteredItems] = React.useState(items)
 
@@ -17,6 +16,10 @@ const Dialogs = ({items, userId}) => {
         )
         setValue(value)
     }
+
+    React.useEffect(() => {
+        setFilteredItems(items)
+    }, [items])
 
     return (
         <div className="dialogs">
@@ -32,6 +35,8 @@ const Dialogs = ({items, userId}) => {
                     key={item._id}
                     isMe={item.user._id === userId}
                     {...item}
+                    onSelect={onSelectDialog}
+                    currentDialog={currentDialog}
                 />
             ))
             ) : (

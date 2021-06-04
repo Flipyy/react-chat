@@ -31,15 +31,11 @@ const LoginForm = () => (
             >
                 {props => {
                     const {
-                        values,
                         touched,
                         errors,
-                        dirty,
-                        isSubmitting,
                         handleChange,
                         handleBlur,
                         handleSubmit,
-                        handleReset
                     } = props
                     return (
                         <Form onSubmit={handleSubmit} className="login-form">

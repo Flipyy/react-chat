@@ -1,12 +1,54 @@
 import React from 'react';
-import {Message} from "../index";
-import {Empty} from "antd";
+import {Empty, Spin, Alert} from "antd";
+import classNames from "classnames";
 
-const Messages = ({items}) => {
+import "./messages.scss"
+
+import {Message} from "../index";
+import {useSelector} from "react-redux";
+
+
+const Messages = React.memo(({items}) => {
+
+    const messagesRef = React.useRef(null)
+
+    const isLoading = useSelector(({messages}) => messages.isLoading)
+
+    React.useEffect(() => {
+        if (messagesRef.current) {
+            messagesRef.current.scrollTo(0, 99999)
+        }
+    })
+
     return (
-        !items ? (
-            <div>
-                <Message
+
+        <div ref={messagesRef} className={classNames("messages", {"messages--loading": isLoading})}>
+            {
+                isLoading ? (
+                    <Spin tip="Загрузка сообщений..."/>
+                ) : items && !isLoading ? (
+                    items.length > 0 ? (
+                        items.map((item) => (
+                                <Message
+                                    key={item._id} {...item}
+                                />
+                            )
+                        )
+                    ) : (
+                        <Empty description="Диалог пуст"/>
+                    )
+                ) : (
+                    <Empty description="Откройте диалог"/>
+                )
+                }
+        </div>
+        )
+    }
+)
+
+export default Messages;
+
+                {/*<Message
                     avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
                     date="Fri May 28 2021 13:42:19"
                     audio="https://notificationsounds.com/storage/sounds/file-sounds-1149-goes-without-saying.mp3"
@@ -53,20 +95,6 @@ const Messages = ({items}) => {
                     isMe={false}
                     isReaded={false}
                 />
-                <Message
-                    avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
-                    text="Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻"
-                    date="Fri May 28 2021 13:42:19"
-                    isMe={false}
-                    isReaded={false}
-                />
-                <Message
-                    avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
-                    text="Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻"
-                    date="Fri May 28 2021 13:42:19"
-                    isMe={false}
-                    isReaded={false}
-                />
 
                 <Message
                     avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
@@ -74,46 +102,9 @@ const Messages = ({items}) => {
                     date="Fri May 28 2021 13:42:19"
                     isMe={false}
                     isReaded={false}
-                />
-
-                <Message
-                    avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
-                    text="Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻"
-                    date="Fri May 28 2021 13:42:19"
-                    isMe={false}
-                    isReaded={false}
-                />
-                <Message
-                    avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
-                    text="Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻"
-                    date="Fri May 28 2021 13:42:19"
-                    isMe={false}
-                    isReaded={false}
-                />
-                <Message
-                    avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
-                    text="Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻"
-                    date="Fri May 28 2021 13:42:19"
-                    isMe={false}
-                    isReaded={false}
-                />
-
-                <Message
-                    avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
-                    text="Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻"
-                    date="Fri May 28 2021 13:42:19"
-                    isMe={false}
-                    isReaded={false}
-                />
+                />*/}
                 {/*<Message avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
                      isTyping
                      isMe={false}
                      isReaded={false}
             />*/}
-            </div>
-        ) : (
-            <Empty description="Нет сообщений"/>)
-    );
-};
-
-export default Messages;
