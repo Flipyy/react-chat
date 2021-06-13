@@ -33,7 +33,7 @@ const Dialogs = ({items, userId, onSelectDialog, currentDialog}) => {
             {filtered.length ? (_.orderBy(filtered, ["created_at"], ["desc"]).map(item => (
                 <DialogItem
                     key={item._id}
-                    isMe={item.user._id === userId}
+                    isMe={item.author._id === userId}
                     {...item}
                     onSelect={onSelectDialog}
                     currentDialog={currentDialog}

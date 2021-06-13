@@ -1,12 +1,13 @@
 import React from 'react';
 import {Form, Input} from "antd";
 import {Link} from "react-router-dom";
-import {UserOutlined, LockOutlined, MailOutlined} from '@ant-design/icons';
+import {UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone} from '@ant-design/icons';
 import {Formik} from "formik";
 
 import {Block, Button} from "../components";
 import validateForm from "../utils/validate";
 
+const success = true
 
 const RegisterForm = () => (
 
@@ -16,7 +17,8 @@ const RegisterForm = () => (
             <p>Для входа в чат, вам нужно зарегистрироваться</p>
         </div>
         <Block>
-            <Formik
+
+            {success ? (<Formik
                 initialValues={{email: "", fullname: "", password: "", password2: ""}}
                 validate={values => {
                     let errors = {}
@@ -38,8 +40,9 @@ const RegisterForm = () => (
                         handleBlur,
                         handleSubmit,
                     } = props
+                     let success = true
                     return (
-                        <Form onSubmit={handleSubmit} className="login-form">
+                         <Form onSubmit={handleSubmit} className="login-form">
                             <Form.Item validateStatus={!touched.email ? "" : errors.email ? "error" : "success"}
                                        help={!touched.email ? "" : errors.email}>
                                 <Input prefix={<MailOutlined className="site-form-item-icon"/>}
@@ -83,16 +86,18 @@ const RegisterForm = () => (
                                         htmlType="submit">Зарегистрироваться</Button>
                             </Form.Item>
                             <Link className="auth__register-link" to="/login">Войти в аккаунт</Link>
-                        </Form>/*) : (
-                                <div className="auth__success-block">
-                                    <InfoCircleTwoTone style={{fontSize: "50px"}}/>
-                                    <h3>Подтвердите свой аккаунт</h3>
-                                    <p>На вашу почту отправлено письмо с ссылкой на подтверждение аккаунта.</p>
-                                </div>)}*/
-
-                    );
+                        </Form>
+                    )
                 }}
             </Formik>
+                ) : (
+                <div className="auth__success-block">
+                <InfoCircleTwoTone style={{fontSize: "50px"}}/>
+                <h3>Подтвердите свой аккаунт</h3>
+                <p>На вашу почту отправлено письмо с ссылкой на подтверждение аккаунта.</p>
+                </div>
+                )
+            }
         </Block>
     </>
 );

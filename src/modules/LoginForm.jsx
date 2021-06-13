@@ -6,10 +6,16 @@ import {Link} from "react-router-dom";
 import {Block, Button} from "../components";
 import validateForm from "../utils/validate";
 import {Formik} from "formik";
+import {useDispatch} from "react-redux";
+import {fetchUserLogin} from "../redux/actions/user";
+import { useHistory } from "react-router-dom";
 
+const LoginForm = () => {
 
-const LoginForm = () => (
-    <>
+    const dispatch = useDispatch()
+    let history = useHistory();
+
+    return (<>
         <div className="auth__top">
             <h2>Войти в аккаунт</h2>
             <p>Пожалуйста, войдите в свой аккаунт</p>
@@ -24,9 +30,17 @@ const LoginForm = () => (
 
                     return errors
                 }}
-                onSubmit={async values => {
-                    await new Promise(resolve => setTimeout(resolve, 500));
-                    alert(JSON.stringify(values, null, 2));
+
+                onSubmit={(values, { setSubmitting }) => {
+                    dispatch(fetchUserLogin(values)).then(({status}) => {
+
+                        if (status === "success") {
+                            setTimeout(() => {
+                                history.push("/")
+                            }, 50)
+                        }
+                        setSubmitting(false)
+                    })
                 }}
             >
                 {props => {
@@ -69,7 +83,7 @@ const LoginForm = () => (
                 }}
             </Formik>
         </Block>
-    </>
-)
+    </>)
+}
 
 export default LoginForm;
