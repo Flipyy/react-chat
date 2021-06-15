@@ -1,105 +1,108 @@
 import React from 'react';
-import {Form, Input} from "antd";
-import {Link} from "react-router-dom";
+import {Form} from "antd";
+import {Link, useHistory} from "react-router-dom";
 import {UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone} from '@ant-design/icons';
 import {Formik} from "formik";
 
-import {Block, Button} from "../components";
-import validateForm from "../utils/validate";
+import {Block, Button, FormField} from "../components";
+import validateForm from '../utils/validate';
+import {useDispatch} from "react-redux";
+import {fetchUserRegister} from "../redux/actions/user";
 
-const success = true
+const RegisterForm = () => {
 
-const RegisterForm = () => (
+    const dispatch = useDispatch()
+    let history = useHistory();
 
-    <>
+    return (<>
         <div className="auth__top">
             <h2>Регистрация</h2>
             <p>Для входа в чат, вам нужно зарегистрироваться</p>
         </div>
         <Block>
 
-            {success ? (<Formik
-                initialValues={{email: "", fullname: "", password: "", password2: ""}}
+            <Formik
+                initialValues={{email: "", fullname: "", password: "", password_2: ""}}
                 validate={values => {
                     let errors = {}
 
-                    validateForm({isAuth: false, values, errors})
+                    validateForm({ isAuth: false, values, errors });
 
                     return errors
                 }}
-                onSubmit={async values => {
-                    await new Promise(resolve => setTimeout(resolve, 500));
-                    alert(JSON.stringify(values, null, 2));
+                onSubmit={(values, { setSubmitting }) => {
+                    dispatch(fetchUserRegister(values)).then(({status}) => {
+
+                        if (status === "success") {
+                            setTimeout(() => {
+                                history.push("/")
+                            }, 100)
+                        }
+                        setSubmitting(false)
+                    }).catch(() => {
+                        setSubmitting(false)
+                    })
                 }}
             >
                 {props => {
                     const {
+                        values,
                         touched,
                         errors,
                         handleChange,
                         handleBlur,
                         handleSubmit,
+                        isValid,
+                        isSubmitting
                     } = props
-                     let success = true
-                    return (
-                         <Form onSubmit={handleSubmit} className="login-form">
-                            <Form.Item validateStatus={!touched.email ? "" : errors.email ? "error" : "success"}
-                                       help={!touched.email ? "" : errors.email}>
-                                <Input prefix={<MailOutlined className="site-form-item-icon"/>}
-                                       placeholder="E-Mail"
-                                       id="email"
-                                       onChange={handleChange}
-                                       onBlur={handleBlur}
-                                />
-                            </Form.Item>
-                            <Form.Item validateStatus={!touched.fullname ? "" : errors.fullname ? "error" : "success"}
-                                       help={!touched.fullname ? "" : errors.fullname}>
-                                <Input prefix={<UserOutlined className="site-form-item-icon"/>}
-                                       placeholder="Ваше имя"
-                                       id="fullname"
-                                       onChange={handleChange}
-                                       onBlur={handleBlur}
-                                />
-                            </Form.Item>
-                            <Form.Item validateStatus={!touched.password ? "" : errors.password ? "error" : "success"}
-                                       help={!touched.password ? "" : errors.password}>
-                                <Input prefix={<LockOutlined className="site-form-item-icon"/>}
-                                       type="password"
-                                       placeholder="Пароль"
-                                       id="password"
-                                       onChange={handleChange}
-                                       onBlur={handleBlur}
-                                />
-                            </Form.Item>
-                            <Form.Item validateStatus={!touched.password ? "" : errors.password ? "error" : "success"}
-                                       help={!touched.password ? "" : errors.password}>
-                                <Input prefix={<LockOutlined className="site-form-item-icon"/>}
-                                       type="password"
-                                       placeholder="Повторить пароль"
-                                       id="password2"
-                                       onChange={handleChange}
-                                       onBlur={handleBlur}
-                                />
-                            </Form.Item>
+
+                         return (<Form onSubmit={handleSubmit} className="login-form">
+                                 <FormField name="email"
+                                            placeholder="E-Mail"
+                                            icon={<MailOutlined className="site-form-item-icon"/>}
+                                            handleChange={handleChange}
+                                            handleBlur={handleBlur}
+                                            touched={touched}
+                                            errors={errors}
+                                            values={values}/>
+                                 <FormField name="fullname"
+                                            placeholder="Ваше имя"
+                                            icon={<UserOutlined className="site-form-item-icon"/>}
+                                            handleChange={handleChange}
+                                            handleBlur={handleBlur}
+                                            touched={touched}
+                                            errors={errors}
+                                            values={values}/>
+                                 <FormField name="password"
+                                            placeholder="Пароль"
+                                            icon={<LockOutlined className="site-form-item-icon"/>}
+                                            type="password"
+                                            handleChange={handleChange}
+                                            handleBlur={handleBlur}
+                                            touched={touched}
+                                            errors={errors}
+                                            values={values}/>
+                                 <FormField name="password_2"
+                                            placeholder="Повторите пароль"
+                                            icon={<LockOutlined className="site-form-item-icon"/>}
+                                            type="password"
+                                            handleChange={handleChange}
+                                            handleBlur={handleBlur}
+                                            touched={touched}
+                                            errors={errors}
+                                            values={values}/>
+
                             <Form.Item>
-                                <Button onClick={handleSubmit} type="primary" size="large"
+                                <Button onClick={handleSubmit} disabled={isSubmitting} type="primary" size="large"
                                         htmlType="submit">Зарегистрироваться</Button>
                             </Form.Item>
-                            <Link className="auth__register-link" to="/login">Войти в аккаунт</Link>
+                            <Link className="auth__register-link" to="/signin">Войти в аккаунт</Link>
                         </Form>
                     )
                 }}
             </Formik>
-                ) : (
-                <div className="auth__success-block">
-                <InfoCircleTwoTone style={{fontSize: "50px"}}/>
-                <h3>Подтвердите свой аккаунт</h3>
-                <p>На вашу почту отправлено письмо с ссылкой на подтверждение аккаунта.</p>
-                </div>
-                )
-            }
         </Block>
-    </>
-);
+    </>)
+};
 
 export default RegisterForm;

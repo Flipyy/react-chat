@@ -1,7 +1,7 @@
 const initialState = {
     data: null,
     token: window.localStorage.token,
-    isAuth: false
+    isAuth: !!window.localStorage.token
 }
 
 const user = (state = initialState, action) => {
@@ -13,6 +13,11 @@ const user = (state = initialState, action) => {
                 isAuth: true,
                 token: window.localStorage.token
             }
+        case "USER:SET_IS_AUTH":
+            return {
+                ...state,
+                isAuth: action.payload
+            };
         default:
             return state
     }

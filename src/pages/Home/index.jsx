@@ -28,9 +28,9 @@ const Home = () => {
         }
     }, [currentDialog])
 
-    /*React.useEffect(() => {
+    React.useEffect(() => {
         dispatch(fetchDialogs())
-    },[])*/
+    },[])
 
     return (
         <div className="home">

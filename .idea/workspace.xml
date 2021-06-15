@@ -20,21 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246f80ce-640d-47c7-a9f0-3ddffa7882ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/api/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/openNotification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FormField/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Auth/components/CheckEmailInfo.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/helpers/validateField.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/axios.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/LoginForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/RegisterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Auth.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Auth/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validate.js" afterDir="false" />
     </list>
@@ -64,7 +64,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-chat-backend" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
@@ -101,7 +101,10 @@
       <workItem from="1622792235572" duration="15609000" />
       <workItem from="1622880348863" duration="4405000" />
       <workItem from="1622978678558" duration="623000" />
-      <workItem from="1623576721944" duration="17337000" />
+      <workItem from="1623576721944" duration="17656000" />
+      <workItem from="1623664092894" duration="3557000" />
+      <workItem from="1623670040715" duration="10115000" />
+      <workItem from="1623744614270" duration="16039000" />
     </task>
     <servers />
   </component>
@@ -133,10 +136,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="628" y="298" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622017616093" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1622885613514">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1623766897856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622885613514" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623766897856" />
     <state x="640" y="329" key="run.anything.popup" timestamp="1623592486950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

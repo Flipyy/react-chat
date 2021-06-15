@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from "classnames";
 
-
 import {IconReaded, Avatar} from "../";
 import format from "date-fns/format";
 import isToday from "date-fns/isToday"
@@ -15,25 +14,26 @@ const getMessageTime = created_at => {
     }
 }
 
-const DialogItem = ({_id, user, unread, created_at, text, isMe, onSelect, currentDialog}) => {
+const DialogItem = ({_id, user, unread, created_at, text, isMe, onSelect, currentDialog, lastMessage}) => {
+    console.log(lastMessage)
     return (
-        <div className={classNames("dialogs__item", {"dialogs__item--online": user.isOnline}, {"dialogs__item--selected": currentDialog === _id})}
+        <div className={classNames("dialogs__item", {"dialogs__item--online": lastMessage.user.isOnline}, {"dialogs__item--selected": currentDialog === _id})}
              onClick={onSelect.bind(this, _id)}
         >
             <div className="dialogs__item-avatar">
-                <Avatar user={user}/>
+                <Avatar user={lastMessage.user}/>
             </div>
             <div className="dialogs__item-info">
                 <div className="dialogs__item-info-top">
-                    <b>{user.fullname}</b>
+                    <b>{lastMessage.user.fullname}</b>
                     <span>
-                        {getMessageTime(created_at)}
+                        {getMessageTime(lastMessage.createdAt)}
                     </span>
                 </div>
                 <div className="dialogs__item-info-bottom">
-                    <p>{text}</p>
+                    <p>{lastMessage.text}</p>
                     {isMe && <IconReaded isMe={true} isReaded={true}/>}
-                    {unread > 0 && <div className="dialogs__item-info-bottom-count">{unread > 9 ? "+9": unread}</div>}
+                    {lastMessage.unread > 0 && <div className="dialogs__item-info-bottom-count">{lastMessage.unread > 9 ? "+9": lastMessage.unread}</div>}
                 </div>
             </div>
         </div>
