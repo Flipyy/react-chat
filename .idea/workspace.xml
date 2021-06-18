@@ -20,23 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="246f80ce-640d-47c7-a9f0-3ddffa7882ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/FormField/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Auth/components/CheckEmailInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/validateField.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/socket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Avatar/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatInput/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatInput/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogitem/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogitem/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Message/Message.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/Message.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Message/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Status/Status.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Status/Status.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Status/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Status/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Time/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Time/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/RegisterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Auth.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/messages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/messages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api/dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api/messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/messages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/helpers/generateAvatarFromHash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/generateAvatarFromHash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,17 +75,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-chat-backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\react-s\projects\06-project\react-chat\src\utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\react-s\projects\06-project\react-chat\src\components" />
       <recent name="D:\react-s\projects\06-project\react-chat\src\utils\api" />
       <recent name="D:\react-s\projects\06-project\react-chat\src\redux\actions" />
       <recent name="D:\react-s\projects\06-project\react-chat\src\utils\helpers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\react-s\projects\06-project\react-chat\src\utils" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -104,7 +116,12 @@
       <workItem from="1623576721944" duration="17656000" />
       <workItem from="1623664092894" duration="3557000" />
       <workItem from="1623670040715" duration="10115000" />
-      <workItem from="1623744614270" duration="16039000" />
+      <workItem from="1623744614270" duration="16594000" />
+      <workItem from="1623831092238" duration="22730000" />
+      <workItem from="1623922558469" duration="2051000" />
+      <workItem from="1623939064397" duration="512000" />
+      <workItem from="1623999337641" duration="10627000" />
+      <workItem from="1624020756172" duration="6821000" />
     </task>
     <servers />
   </component>
@@ -128,18 +145,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="726" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622726208648" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622654918641">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623852293333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622654918641" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623852293333" />
     <state x="628" y="298" key="EditFileWatcherDialog" timestamp="1622017616093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="628" y="298" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622017616093" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1623766897856">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1623999342374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623766897856" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623999342374" />
     <state x="640" y="329" key="run.anything.popup" timestamp="1623592486950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

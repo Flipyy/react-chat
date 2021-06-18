@@ -8,17 +8,20 @@ import {Message} from "../index";
 import {useSelector} from "react-redux";
 
 
-const Messages = React.memo(({items}) => {
+
+const Messages = React.memo(({items, onRemoveMessage}) => {
 
     const messagesRef = React.useRef(null)
 
     const isLoading = useSelector(({messages}) => messages.isLoading)
+    const user = useSelector(({user}) => user.data)
 
     React.useEffect(() => {
         if (messagesRef.current) {
             messagesRef.current.scrollTo(0, 99999)
         }
-    })
+    }, [items])
+
 
     return (
 
@@ -30,7 +33,10 @@ const Messages = React.memo(({items}) => {
                     items.length > 0 ? (
                         items.map((item) => (
                                 <Message
-                                    key={item._id} {...item}
+                                    key={item._id}
+                                    onRemoveMessage={onRemoveMessage.bind(this, item._id)}
+                                    isMe={user._id === item.user._id}
+                                    {...item}
                                 />
                             )
                         )
@@ -52,7 +58,7 @@ export default Messages;
                     avatar="https://sun3-12.userapi.com/s/v1/if2/Gnw7VG6ZO3sZdBufI-yPF2UYabRB86zUZByvTFtzABs3X6qmB-Z-C8UWqOZ2Q5XMMRsJ2MEnHfjTjyyey80Xx5NW.jpg?size=100x0&quality=96&crop=91,91,494,494&ava=1"
                     date="Fri May 28 2021 13:42:19"
                     audio="https://notificationsounds.com/storage/sounds/file-sounds-1149-goes-without-saying.mp3"
-                    isMe={false}
+                    isMe={  false}
                     isReaded={false}
                 />
                 <Message

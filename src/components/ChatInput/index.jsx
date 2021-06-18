@@ -5,13 +5,21 @@ import { UploadField } from '@navjobs/upload'
 import {Picker} from "emoji-mart"
 
 import "./ChatInput.scss"
+import {useSelector} from "react-redux";
 
-const ChatInput = () => {
+const ChatInput = ({onSendMessage, currentDialog}) => {
     const [value, setValue] = React.useState("")
     const [emojiPickerVisible, setShowEmojiPicker] = React.useState(false)
 
     const toggleEmojiPicker = () => {
         setShowEmojiPicker(!emojiPickerVisible)
+    }
+
+    const handleSendMessage = (e) => {
+        if (e.keyCode === 13 && value) {
+            onSendMessage(value, currentDialog)
+            setValue("")
+        }
     }
 
     return (
@@ -22,7 +30,11 @@ const ChatInput = () => {
                 </div>}
                 <Button shape="circle" icon={<SmileOutlined />} onClick={toggleEmojiPicker} />
             </div>
-            <Input onChange={e => setValue(e.target.value)} size="large" placeholder="Введите текст сообщения..."/>
+            <Input onChange={e => setValue(e.target.value)}
+                   onKeyUp={handleSendMessage}
+                   size="large"
+                   value={value}
+                   placeholder="Введите текст сообщения..."/>
             <div className="chat-input__actions">
 
                 <UploadField

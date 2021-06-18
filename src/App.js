@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect, Route} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 
 import {Auth, Home} from "./pages";
 import {useSelector} from "react-redux";
@@ -11,8 +11,10 @@ function App() {
 
     return (
         <div className="wrapper">
-            <Route exact path={["/signin", "/signup", "/signup/verify"]} component={Auth} />
-            <Route exact path="/" render={() => ( isAuth ? <Home /> : <Redirect to="/signin" />)} />
+            <Switch>
+                <Route exact path={["/signin", "/signup", "/signup/verify"]} component={Auth}/>
+                <Route exact path="/" render={() => (isAuth ? <Home/> : <Redirect to="/signin"/>)}/>
+            </Switch>
         </div>
     );
 }

@@ -1,13 +1,12 @@
 import React from "react";
-import {TeamOutlined, FormOutlined, EllipsisOutlined} from "@ant-design/icons/lib/icons";
-import {Button} from 'antd';
 import {useDispatch, useSelector} from "react-redux";
 
 import "./Home.scss"
 
-import {Messages, Dialogs, Status, ChatInput} from "../../components";
+import {Messages, Status, ChatInput, Sidebar} from "../../components";
 import {fetchDialogs, setCurrentDialogId} from "../../redux/actions/dialogs";
-import {fetchMessages} from "../../redux/actions/messages";
+import {addMessage, fetchMessages, fetchSendMessage, removeMessageById} from "../../redux/actions/messages";
+import socket from "../../core/socket";
 
 
 const Home = () => {
@@ -17,52 +16,57 @@ const Home = () => {
     const items = useSelector(({dialogs}) => dialogs.items)
     const currentDialog = useSelector(({dialogs}) => dialogs.currentDialog)
     const messageItems = useSelector(({messages}) => messages.items)
+    const user = useSelector(({user}) => user)
+
 
     const handleOnSelectDialog = id => {
         dispatch(setCurrentDialogId(id))
+    }
+
+    const onNewMessage = (data) => {
+        dispatch(addMessage(data))
+    }
+
+    const onSendMessage = (value, currentDialog) => {
+        dispatch(fetchSendMessage(value, currentDialog))
+    }
+
+    const onRemoveMessage = (id) => {
+        dispatch(removeMessageById(id))
     }
 
     React.useEffect(() => {
         if (currentDialog) {
             dispatch(fetchMessages(currentDialog))
         }
+        socket.on("SERVER:NEW_MESSAGE", onNewMessage)
+
+        return () => {
+            socket.removeListener("SERVER:NEW_MESSAGE", onNewMessage)
+        }
     }, [currentDialog])
 
     React.useEffect(() => {
-        dispatch(fetchDialogs())
-    },[])
+        dispatch(fetchDialogs());
+
+        socket.on('SERVER:DIALOG_CREATED', dispatch(fetchDialogs()));
+        return () => {
+            socket.removeListener('SERVER:DIALOG_CREATED', dispatch(fetchDialogs()));
+        };
+    }, []);
+
 
     return (
         <div className="home">
             <div className="chat">
-                <div className="chat__sidebar">
-                    <div className="chat__sidebar-header">
-                        <div>
-                            <TeamOutlined/>
-                            <span>Список диалогов</span>
-                        </div>
-                        <Button shape="circle" icon={<FormOutlined/>}/>
-                    </div>
-                    <div className="chat__sidebar-dialogs">
-                        <Dialogs items={items} onSelectDialog={handleOnSelectDialog} currentDialog={currentDialog}/>
-                    </div>
-                </div>
+                {user && <Sidebar items={items} user={user} currentDialog={currentDialog} handleOnSelectDialog={handleOnSelectDialog}/>}
                 <div className="chat__dialog">
-                    <div className="chat__dialog-header">
-                        <div/>
-                        <div className="chat__dialog-header-center">
-                            <b className="chat__dialog-header-username">Максим Соколов</b>
-                            <div className="chat__dialog-header-status">
-                                <Status online={true}/>
-                            </div>
-                        </div>
-                        <Button shape="circle" icon={<EllipsisOutlined style={{fontSize: "24px"}}/>}/>
-                    </div>
+                    <Status currentDialog={currentDialog} user={user} dialogs={items}/>
                     <div className="chat__dialog-messages">
-                        <Messages items={messageItems}/>
+                        <Messages items={messageItems} onRemoveMessage={onRemoveMessage}/>
                     </div>
                     <div className="chat__dialog-input">
-                        <ChatInput/>
+                        <ChatInput onSendMessage={onSendMessage} currentDialog={currentDialog}/>
                     </div>
                 </div>
             </div>

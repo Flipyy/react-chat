@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from "classnames";
+import {Button, Popover} from "antd";
 
 import "./Message.scss"
 import {convertCurrentTime} from "../../utils/helpers"
@@ -7,6 +8,7 @@ import waveSvg from "../../assets/img/wave.svg"
 import playSvg from "../../assets/img/play.svg"
 import pauseSvg from "../../assets/img/pause.svg"
 import {Time, IconReaded, Avatar} from "../"
+import {EllipsisOutlined} from "@ant-design/icons/lib/icons";
 
 
 const MessageAudio = ({audio}) => {
@@ -47,7 +49,7 @@ const MessageAudio = ({audio}) => {
     return (
         <div className="message__audio">
             <audio ref={audioElem} src={audio} preload="auto"/>
-            <div className="message__audio-progress" style={{width: progress + "%"}}></div>
+            <div className="message__audio-progress" style={{width: progress + "%"}}/>
             <div className="message__audio-info">
                 <div className="message__audio-btn">
                     <button onClick={togglePlay}>
@@ -70,7 +72,9 @@ const MessageAudio = ({audio}) => {
 
 }
 
-const Message = ({_id, user, text, date, isMe, isReaded, attachments, audio, isTyping}) => {
+const Message = ({_id, user, text, date, isMe, isReaded, attachments, audio, isTyping, onRemoveMessage}) => {
+
+    console.log(user)
 
     return (
         <div className={classNames('message', {
@@ -81,8 +85,19 @@ const Message = ({_id, user, text, date, isMe, isReaded, attachments, audio, isT
         })}>
             <div className="message__content">
                 {isMe && <IconReaded isReaded={isReaded}/>}
+                { isMe && <Popover
+                    content={
+                        <div>
+                            <Button onClick={onRemoveMessage}>Удалить сообщение</Button>
+                        </div>
+                    }
+                    trigger="click">
+                    <div className="message__icon-actions">
+                        <Button type="link" shape="circle" icon={<EllipsisOutlined style={{fontSize: "24px"}}/>}/>
+                    </div>
+                </Popover> }
                 <div className="message__avatar">
-                    <Avatar user={user}/>
+                    <Avatar {...user}/>
                 </div>
                 <div className="message__info">
                     {(text || isTyping || audio) && (

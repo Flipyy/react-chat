@@ -6,10 +6,11 @@ import {DialogItem} from "../index";
 import "./Dialogs.scss"
 
 
+
 const Dialogs = ({items, userId, onSelectDialog, currentDialog}) => {
+
     const [inputValue, setValue] = React.useState("")
     const [filtered, setFilteredItems] = React.useState(items)
-
     const onChangeInput = value => {
         setFilteredItems(
             items.filter(dialog => dialog.user.fullname.toLowerCase().indexOf(value.toLowerCase()) >= 0)
@@ -38,6 +39,7 @@ const Dialogs = ({items, userId, onSelectDialog, currentDialog}) => {
                     onSelect={onSelectDialog}
                     currentDialog={currentDialog}
                 />
+
             ))
             ) : (
                 <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="Ничего не найдено"/>

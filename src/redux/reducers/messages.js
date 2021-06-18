@@ -1,5 +1,5 @@
 const initialState = {
-    items: null,
+    items: [],
     isLoading: false
 }
 
@@ -10,6 +10,18 @@ const messages = (state = initialState, action) => {
                 ...state,
                 items: action.payload,
                 isLoading: false
+            }
+        case "MESSAGES:ADD_MESSAGE":
+            return {
+                ...state,
+                items: [
+                    ...state.items, action.payload
+                ]
+            }
+        case 'MESSAGES:REMOVE_MESSAGE':
+            return {
+                ...state,
+                items: state.items.filter(message => message._id !== action.payload),
             }
         case "MESSAGES:SET_IS_LOADING":
             return {
