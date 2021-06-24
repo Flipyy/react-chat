@@ -2,11 +2,13 @@ import { combineReducers } from 'redux';
 import dialogs from "./dialogs";
 import messages from "./messages";
 import user from "./user";
+import attachments from "./attachments";
 
 const rootReducer = combineReducers({
     dialogs,
     messages,
-    user
+    user,
+    attachments
 });
 
 export default rootReducer;

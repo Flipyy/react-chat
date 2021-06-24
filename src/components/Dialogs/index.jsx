@@ -9,18 +9,27 @@ import "./Dialogs.scss"
 
 const Dialogs = ({items, userId, onSelectDialog, currentDialog}) => {
 
+
     const [inputValue, setValue] = React.useState("")
     const [filtered, setFilteredItems] = React.useState(items)
-    const onChangeInput = value => {
+
+    const onChangeInput = (value = '') => {
         setFilteredItems(
-            items.filter(dialog => dialog.user.fullname.toLowerCase().indexOf(value.toLowerCase()) >= 0)
-        )
-        setValue(value)
-    }
+            items.filter(
+                dialog =>
+                    dialog.author.fullname.toLowerCase().indexOf(value.toLowerCase()) >= 0 ||
+                    dialog.partner.fullname.toLowerCase().indexOf(value.toLowerCase()) >= 0,
+            ),
+        );
+        setValue(value);
+    };
 
     React.useEffect(() => {
-        setFilteredItems(items)
-    }, [items])
+        if (items.length) {
+            onChangeInput();
+        }
+    }, [items]);
+
 
     return (
         <div className="dialogs">
@@ -31,17 +40,17 @@ const Dialogs = ({items, userId, onSelectDialog, currentDialog}) => {
                     value={inputValue}
                 />
             </div>
-            {filtered.length ? (_.orderBy(filtered, ["created_at"], ["desc"]).map(item => (
+            {items.length ? (_.orderBy(filtered, ["created_at"], ["desc"]).map(item => (
                 <DialogItem
                     key={item._id}
                     isMe={item.author._id === userId}
                     {...item}
+                    userId={userId}
                     onSelect={onSelectDialog}
                     currentDialog={currentDialog}
                 />
 
-            ))
-            ) : (
+            ))) : (
                 <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="Ничего не найдено"/>
                 )
             }

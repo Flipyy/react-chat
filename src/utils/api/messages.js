@@ -1,7 +1,9 @@
 import {axios} from "../../core";
 
-export default {
+const messagesAPI ={
     getAllByDialogId: (id) => axios.get("/messages?dialog=" + id),
-    send: (text, dialog_id) => axios.post("/messages", {text: text, dialog_id: dialog_id}),
+    send: (text, dialog_id, attachments) => axios.post("/messages", {text: text, dialog_id: dialog_id, attachments}),
     removeById: (id) => axios.delete("/messages?id=" + id)
 }
+
+export default messagesAPI

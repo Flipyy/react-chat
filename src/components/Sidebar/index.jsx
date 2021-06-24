@@ -4,11 +4,15 @@ import {Modal, Button, Select, Form, Input} from "antd";
 import {Dialogs} from "../index";
 import {dialogsAPI, userAPI} from "../../utils/api";
 import "./Sidebar.scss"
+import {fetchDialogs} from "../../redux/actions/dialogs";
+import {useDispatch} from "react-redux";
 
 const { Option } = Select;
 const { TextArea } = Input;
 
 const Sidebar = ({items, user, handleOnSelectDialog, currentDialog}) => {
+
+    const dispatch = useDispatch()
 
     const [visible, setVisible] = React.useState(false)
     const [selectedUserId, setSelectedUserId] = React.useState(false);
@@ -23,6 +27,7 @@ const Sidebar = ({items, user, handleOnSelectDialog, currentDialog}) => {
     }
 
     const onClose = () => {
+        dispatch(fetchDialogs())
         setVisible(false)
     }
 
@@ -40,7 +45,9 @@ const Sidebar = ({items, user, handleOnSelectDialog, currentDialog}) => {
         dialogsAPI.create(
             {partner: selectedUserId,
                 text: messageText
-            }).then(onClose)
+            }).then(
+                onClose
+        )
             .catch(() => {
                 setIsLoading(false);
             });
@@ -71,7 +78,7 @@ const Sidebar = ({items, user, handleOnSelectDialog, currentDialog}) => {
             </div>
             <div className="chat__sidebar-dialogs">
                 <Dialogs items={items} userId={user.data && user.data._id} onSelectDialog={handleOnSelectDialog}
-                         currentDialog={currentDialog}/>
+                                   currentDialog={currentDialog}/>
             </div>
 
 

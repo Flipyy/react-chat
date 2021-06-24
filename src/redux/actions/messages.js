@@ -21,7 +21,7 @@ export const addMessage = (message) => (dispatch, getState) => {
 export const removeMessageById = (id) => async (dispatch) => {
     try {
         if (window.confirm("Вы действительно хотите удалить сообщение?")) {
-            let response = await messagesAPI.removeById(id)
+            await messagesAPI.removeById(id)
             dispatch(removeMessage(id))
         }
     } catch(err) {
@@ -29,8 +29,8 @@ export const removeMessageById = (id) => async (dispatch) => {
     }
 }
 
-export const fetchSendMessage = (text, dialogId) => async (dispatch) => {
-    let response = await messagesAPI.send(text, dialogId)
+export const fetchSendMessage = ({ text, dialogId, attachments }) => async (dispatch) => {
+    await messagesAPI.send(text, dialogId, attachments)
 }
 
 export const fetchMessages = (dialogId) => async (dispatch) => {

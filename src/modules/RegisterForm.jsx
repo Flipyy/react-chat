@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form} from "antd";
 import {Link, useHistory} from "react-router-dom";
-import {UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone} from '@ant-design/icons';
+import {UserOutlined, LockOutlined, MailOutlined} from '@ant-design/icons';
 import {Formik} from "formik";
 
 import {Block, Button, FormField} from "../components";
@@ -52,7 +52,6 @@ const RegisterForm = () => {
                         handleChange,
                         handleBlur,
                         handleSubmit,
-                        isValid,
                         isSubmitting
                     } = props
 
